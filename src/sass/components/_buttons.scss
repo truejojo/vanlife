@@ -10,10 +10,13 @@
   font-weight: $fw-700;
   padding: $button-padding-block $button-padding-inline;
   transition: 275ms ease;
+  background-color: clr(primary, 400);
+  color: clr(neutral, 100);
+  justify-content: center;
 
-  &[data-type="accent"] {
-    background-color: clr(accent, 400);
-    color: clr(neutral, 900);
+  &[data-type="accent-3"] {
+    background-color: clr(accent-3, 400);
+    color: clr(neutral, 100);
 
     // &:is(:hover, :focus) {
     //   background-color: clr(accent, 500);

@@ -1,0 +1,14 @@
+.home {
+  background-image: url("../../../public/assets/images/home-hero.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 101%;
+}
+.main-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 2rem;
+  min-height: 500px;
+}

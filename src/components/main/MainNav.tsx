@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 const MainNav = () => (
   <nav>
-    <ul>
+    <ul className="flex" role="list">
       <li>
         <NavLink to="/">Home</NavLink>
       </li>

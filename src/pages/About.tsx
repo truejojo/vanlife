@@ -2,10 +2,10 @@ import {Link} from "react-router-dom"
 
 const About = () => (
   <>
-    <img src="../assets/images/about-hero.png" alt="" />
+    <img className="about-img" src="../assets/images/about-hero.png" alt="" />
     <div className="container">
-      <section>
-        <h1>Don’t squeeze in a sedan when you could relax in a van.</h1>
+      <section className="flow">
+        <h1 className="fs-800 fw-bold">Don’t squeeze in a sedan when you could relax in a van.</h1>
         <p>
           Our mission is to enliven your road trip with the perfect travel van
           rental. Our vans are recertified before each trip to ensure your
@@ -16,13 +16,13 @@ const About = () => (
           of touring the world on 4 wheels.
         </p>
       </section>
-      <section>
-        <h2>
+      <section className="flow bg-primary-300 p-48">
+        <h2 className="fs-500 fw-bold">
           Your destination is waiting.
           <br />
           Your van is ready.
         </h2>
-        <Link to="/vans">
+        <Link to="/vans" className="button" data-type="accent-3">
           Explore our vans
         </Link>
       </section>
