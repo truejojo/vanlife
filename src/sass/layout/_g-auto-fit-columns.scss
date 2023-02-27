@@ -5,6 +5,6 @@
   gap: var(--grid-gap, $grid-gap);
   grid-template-columns: repeat(
     auto-fit,
-    minmax(min(var(--grid-item-size, 250px), 100%), 1fr)
+    minmax(min(var(--grid-item-size, 300px), 100%), 1fr)
   );
 }

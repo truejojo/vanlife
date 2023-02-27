@@ -1,11 +1,11 @@
-import { Link } from "react-router-dom";
+import Logo from "./Logo";
 import MainNav from "./MainNav";
 
 const Header = () => (
   <header className="p-block-36">
     <div className="container">
-      <div className="flex-space-between">
-        <Link to="/" className="logo uppercase">🚐Vanlife</Link>
+      <div className="main-header">
+        <Logo />
         <MainNav />
       </div>
     </div>

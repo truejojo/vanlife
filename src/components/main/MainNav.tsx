@@ -1,8 +1,8 @@
 import { NavLink } from "react-router-dom";
 
 const MainNav = () => (
-  <nav>
-    <ul className="flex" role="list">
+  <nav className="main-nav">
+    <ul className="flex-group" role="list">
       <li>
         <NavLink to="/">Home</NavLink>
       </li>

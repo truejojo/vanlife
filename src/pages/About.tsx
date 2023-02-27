@@ -1,11 +1,13 @@
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
 
 const About = () => (
-  <>
+  <div className="about">
     <img className="about-img" src="../assets/images/about-hero.png" alt="" />
-    <div className="container">
+    <div className="container" data-type="small">
       <section className="flow">
-        <h1 className="fs-800 fw-bold">Don’t squeeze in a sedan when you could relax in a van.</h1>
+        <h1 className="fs-800 fw-bold">
+          Don’t squeeze in a sedan when you could relax in a van.
+        </h1>
         <p>
           Our mission is to enliven your road trip with the perfect travel van
           rental. Our vans are recertified before each trip to ensure your
@@ -22,12 +24,12 @@ const About = () => (
           <br />
           Your van is ready.
         </h2>
-        <Link to="/vans" className="button" data-type="accent-3">
+        <Link to="vans" className="button" data-type="accent-3">
           Explore our vans
         </Link>
       </section>
     </div>
-  </>
+  </div>
 );
 
 export default About;
