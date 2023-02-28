@@ -24,7 +24,7 @@ const About = () => (
           <br />
           Your van is ready.
         </h2>
-        <Link to="vans" className="button" data-type="accent-3">
+        <Link to="/vans" className="button" data-type="accent-3">
           Explore our vans
         </Link>
       </section>

@@ -9,7 +9,7 @@ const Home = () => (
           Add adventure to your life by joining the #vanlife movement. Rent the
           perfect van to make your perfect road trip.
         </p>
-        <Link to="vans" className="button m-bottom-48">Find your van</Link>
+        <Link to="/vans" className="button m-bottom-48">Find your van</Link>
       </header>
     </div>
   </div>

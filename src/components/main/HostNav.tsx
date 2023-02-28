@@ -1,27 +1,21 @@
 import { NavLink } from "react-router-dom";
 
-const MainNav = () => (
-  <nav className="main-nav nav">
+const HostNav = () => (
+  <div className="host-nav nav">
     <ul className="flex-group" role="list">
       <li>
         <NavLink
-          to="/"
+          to="."
+          end
         >
-          Home
+          Dashboard
         </NavLink>
       </li>
       <li>
         <NavLink
-          to="host"
+          to="income"
         >
-          Host
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          to="about"
-        >
-          About
+          Income
         </NavLink>
       </li>
       <li>
@@ -31,8 +25,15 @@ const MainNav = () => (
           Vans
         </NavLink>
       </li>
+      <li>
+        <NavLink
+          to="reviews"
+        >
+          Reviews
+        </NavLink>
+      </li>
     </ul>
-  </nav>
+  </div>
 );
 
-export default MainNav;
+export default HostNav;
