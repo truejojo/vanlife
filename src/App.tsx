@@ -3,15 +3,18 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Vans from "./pages/van/Vans";
 import VanDetail from "./pages/van/VanDetail";
-import Layout from "./components/layouts/Layout";
-
-import "../server.js";
-import HostLayout from "./components/layouts/HostLayout";
 import Dashboard from "./pages/host/Dashboard";
 import Income from "./pages/host/Income";
 import HostVans from "./pages/host/HostVans";
 import HostVanDetail from "./pages/host/HostVanDetail";
 import Reviews from "./pages/host/Reviews";
+import HostVanInfo from "./pages/host/HostVanInfo";
+import HostVanPhotos from "./pages/host/HostVanPhotos";
+import HostVanPricing from "./pages/host/HostVanPricing";
+import Layout from "./components/layouts/Layout";
+import HostLayout from "./components/layouts/HostLayout";
+
+import "../server.js";
 
 const App = () => (
   <Routes>
@@ -23,9 +26,13 @@ const App = () => (
 
       <Route path="host" element={<HostLayout />}>
         <Route index element={<Dashboard />} />
-        <Route path="income" element={<Income />} />        
-        <Route path="vans" element={<HostVans />} />        
-        <Route path="vans/:id" element={<HostVanDetail />} />        
+        <Route path="income" element={<Income />} />
+        <Route path="vans" element={<HostVans />} />
+        <Route path="vans/:id" element={<HostVanDetail />}>
+          <Route index element={<HostVanInfo />} />
+          <Route path="pricing" element={<HostVanPricing />} />
+          <Route path="photos" element={<HostVanPhotos />} />
+        </Route>
         <Route path="reviews" element={<Reviews />} />
       </Route>
     </Route>

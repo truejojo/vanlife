@@ -15,7 +15,7 @@ const HostVans = () => {
 
     fetchData();
   }, []);
-  console.log(vans);
+ 
   return (
     <div className="host-vans">
       <div className="container">
