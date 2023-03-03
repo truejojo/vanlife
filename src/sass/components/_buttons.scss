@@ -14,14 +14,41 @@
   color: clr(neutral, 100);
   justify-content: center;
 
+  &[data-type="accent-1"] {
+    background-color: clr(accent-1, 400);
+    color: clr(neutral, 100);
+  }
+  &[data-type="accent-2"] {
+    background-color: clr(accent-2, 400);
+    color: clr(neutral, 100);
+  }
   &[data-type="accent-3"] {
     background-color: clr(accent-3, 400);
     color: clr(neutral, 100);
-
-    // &:is(:hover, :focus) {
-    //   background-color: clr(accent, 500);
-    //   color: clr(neutral, 100);
-    // }
+  }
+  
+  &[data-search="search"] {
+    background-color: clr(primary, 200);
+    color: clr(neutral, 900);
+    padding: .5em 1em;
+    font-weight: $fw-400;
+    
+    &:is(:hover, :focus) {
+      background-color: clr(primary, 300);      
+      
+      &[data-type="accent-1"] {
+        background-color: clr(accent-1, 400);
+        color: clr(neutral, 100);
+      }
+      &[data-type="accent-2"] {
+        background-color: clr(accent-2, 400);
+        color: clr(neutral, 100);
+      }
+      &[data-type="accent-3"] {
+        background-color: clr(accent-3, 400);
+        color: clr(neutral, 100);
+      }
+    }   
   }
 
   &[data-type="outline"] {
