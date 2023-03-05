@@ -4,6 +4,8 @@ import VansList from "./components/VansList";
 import { IVanProps } from "./components/Van";
 import { fetchData } from "../../api";
 
+export const loader = () => "Vans data goes here";
+
 const Vans = () => {
   const [vans, setVans] = useState<IVanProps[] | []>([]);
   const [searchParams, setSearchParams] = useSearchParams();
@@ -15,7 +17,7 @@ const Vans = () => {
     const loadingData = async () => {
       setError(null);
       setLoading(true);
-      
+
       try {
         const data = await fetchData();
         setVans(data);

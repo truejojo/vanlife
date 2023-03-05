@@ -1,8 +1,13 @@
-import { Routes, Route } from "react-router-dom";
+import {
+  RouterProvider,
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+} from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
-import Vans from "./pages/van/Vans";
+import Vans, { loader as vansLoader } from "./pages/van/Vans";
 import VanDetail from "./pages/van/VanDetail";
 import Dashboard from "./pages/host/Dashboard";
 import Income from "./pages/host/Income";
@@ -17,12 +22,12 @@ import HostLayout from "./components/layouts/HostLayout";
 
 import "../server.js";
 
-const App = () => (
-  <Routes>
+const router = createBrowserRouter(
+  createRoutesFromElements(
     <Route path="/" element={<Layout />}>
       <Route index element={<Home />} />
       <Route path="about" element={<About />} />
-      <Route path="vans" element={<Vans />} />
+      <Route path="vans" element={<Vans />} loader={vansLoader} />
       <Route path="vans/:id" element={<VanDetail />} />
 
       <Route path="host" element={<HostLayout />}>
@@ -38,10 +43,12 @@ const App = () => (
 
         <Route path="reviews" element={<Reviews />} />
       </Route>
-      
+
       <Route path="*" element={<NotFound />} />
     </Route>
-  </Routes>
+  )
 );
+
+const App = () => <RouterProvider router={router} />;
 
 export default App;
