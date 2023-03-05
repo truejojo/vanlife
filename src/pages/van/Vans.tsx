@@ -1,23 +1,35 @@
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
-import axios from "axios";
 import VansList from "./components/VansList";
 import { IVanProps } from "./components/Van";
+import { fetchData } from "../../api";
 
 const Vans = () => {
   const [vans, setVans] = useState<IVanProps[] | []>([]);
   const [searchParams, setSearchParams] = useSearchParams();
   const typeFilter = searchParams.get("type");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const res = await axios.get("/api/vans");
-      const data = await res.data;
-      setVans(data.vans);
+    const loadingData = async () => {
+      setError(null);
+      setLoading(true);
+      
+      try {
+        const data = await fetchData();
+        setVans(data);
+      } catch (err) {
+        if (err instanceof Error) {
+          setError(err);
+        }
+      } finally {
+        setLoading(false);
+      }
     };
 
-    fetchData();
-  }, [vans, searchParams]);
+    loadingData();
+  }, []);
 
   const handleFilterChange = (key: string, value: string | null) => {
     setSearchParams((prevParams) => {
@@ -26,7 +38,6 @@ const Vans = () => {
       return prevParams;
     });
   };
-
   return (
     <div className="vans container">
       <h2 className="fs-600 fw-bold">Explore our van options</h2>
@@ -66,11 +77,11 @@ const Vans = () => {
           </button>
         )}
       </div>
-      {vans.length > 0 && (
-        <VansList
-          vans={vans}
-          typeFilter={typeFilter}
-        />
+      {error && <h2 className="fs-600">Error {error.message}</h2>}
+      {loading ? (
+        <h2 className="fs-600">Loading...</h2>
+      ) : (
+        vans.length > 0 && <VansList vans={vans} typeFilter={typeFilter} />
       )}
     </div>
   );

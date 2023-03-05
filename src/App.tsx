@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
+import NotFound from "./pages/NotFound";
 import Vans from "./pages/van/Vans";
 import VanDetail from "./pages/van/VanDetail";
 import Dashboard from "./pages/host/Dashboard";
@@ -28,13 +29,17 @@ const App = () => (
         <Route index element={<Dashboard />} />
         <Route path="income" element={<Income />} />
         <Route path="vans" element={<HostVans />} />
+
         <Route path="vans/:id" element={<HostVanDetail />}>
           <Route index element={<HostVanInfo />} />
           <Route path="pricing" element={<HostVanPricing />} />
           <Route path="photos" element={<HostVanPhotos />} />
         </Route>
+
         <Route path="reviews" element={<Reviews />} />
       </Route>
+      
+      <Route path="*" element={<NotFound />} />
     </Route>
   </Routes>
 );
